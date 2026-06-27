@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from tkinter import Menu
+from code.Level import Level
 
 import pygame
 
@@ -25,7 +25,7 @@ class Game:
                 pygame.quit() #close window
                 quit() #end game
             else:
-	            pass
+                pass
 
 
 
