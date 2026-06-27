@@ -15,7 +15,7 @@ class Menu:
 
     def run(self):
         pygame.mixer_music.load('./asset/fundopantano.mp3')
-        #--------------------------------ygame.mixer_music.play(-1)
+        #--------------------------pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(text_size=130, text="Rwby Aventureira", text_color=COLOR_GREEN, text_center_pos=((WIN_WIDTH / 2), 200))
