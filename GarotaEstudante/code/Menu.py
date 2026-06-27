@@ -1,10 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#from _curses import COLOR_YELLOW
 
 import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
-from code.Const import WIN_WIDTH, COLOR_GREEN, MENU_OPTION, COLOR_WHITE
+from code.Const import WIN_WIDTH, COLOR_GREEN, MENU_OPTION, COLOR_WHITE, COLOR_YELLOW
 
 class Menu:
 
@@ -15,13 +16,18 @@ class Menu:
 
     def run(self):
         pygame.mixer_music.load('./asset/fundopantano.mp3')
-        #--------------------------pygame.mixer_music.play(-1)
+        #----pygame.mixer_music.play(-1)
+
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(text_size=130, text="Rwby Aventureira", text_color=COLOR_GREEN, text_center_pos=((WIN_WIDTH / 2), 200))
 
             for i in range(len(MENU_OPTION)):
-                self.menu_text(text_size=50, text=MENU_OPTION[i], text_color=COLOR_WHITE, text_center_pos=((WIN_WIDTH / 2), 350 + 50 * i))
+                if i == menu_option:
+                    self.menu_text(text_size=50, text=MENU_OPTION[i], text_color=COLOR_YELLOW, text_center_pos=((WIN_WIDTH / 2), 350 + 50 * i))
+
+                else:
+                    self.menu_text(text_size=50, text=MENU_OPTION[i], text_color=COLOR_WHITE, text_center_pos=((WIN_WIDTH / 2), 350 + 50 * i))
 
             pygame.display.flip()
 
