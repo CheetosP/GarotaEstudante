@@ -19,6 +19,10 @@ class EntityFactory:
             case _:
                 return []"""
 
+
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -30,12 +34,17 @@ class EntityFactory:
 
     @staticmethod
     def get_entity(entity_name: str, position=(0, 0)):
+
         match entity_name:
 
             case 'Level1Bg':
+
                 return [
-                    Background('Level1Bg', (0, 0)),
-                    Background('Level2Bg', (WIN_WIDTH, 0))
+                    Background(name='Level1Bg',
+                               position=(0, 0)),
+
+                    Background(name='Level2Bg',
+                               position=(WIN_WIDTH, 0))
                 ]
 
             case _:
